@@ -43,7 +43,7 @@ def get_menu_items():
 @app.route('/menu_items', methods=['POST'])
 def add_menu_item():
     data = request.get_json()
-    new_menu_item = MenuItem(name=data['name'], description=data['description'],
+    new_menu_item = MenuItem(ID=data['id'],name=data['name'], description=data['description'],
                              price=data['price'], availability=data['availability'])
     db.session.add(new_menu_item)
     db.session.commit()
